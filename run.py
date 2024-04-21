@@ -51,11 +51,11 @@ async def postData():
             else:
                 letterDay = "nil"
 
-
-    return "['" + str(letterDay) + "'," +  str(term_data) + "]"
+    
+    return letterDay, term_data
 
 async def main():
     data = await postData()
-    print(data)
+    print(json.dumps(data))
 
 asyncio.run(main())
