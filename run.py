@@ -1,7 +1,6 @@
+from datetime import datetime
 import asyncio
 import aiohttp
-from datetime import datetime
-import json
 
 def getLocalDate():
     # Get current local date
@@ -26,14 +25,6 @@ async def postData():
         }
         await session.post(post_url, data=post_payload, headers=post_headers, ssl=False)
 
-        # Second GET request
-        term_url = 'https://middletowncityschools.infinitecampus.org/campus/resources/portal/roster?_expand=%7BsectionPlacements-%7Bterm%7D%7D'
-        term_headers = {
-            'accept': 'application/json, text/plain, */*',
-        }
-        async with session.get(term_url, headers=term_headers, ssl=False) as term_response:
-            term_data = await term_response.json()
-
         # Third GET request
         day_url = 'https://middletowncityschools.infinitecampus.org/campus/resources/calendar/instructionalDay?calendarID=204'
         day_headers = {
@@ -50,12 +41,11 @@ async def postData():
                 letterDay = "Y"
             else:
                 letterDay = "nil"
-
     
-    return letterDay, term_data
+    return letterDay
 
 async def main():
     data = await postData()
-    print(json.dumps(data))
+    print(data)
 
 asyncio.run(main())
