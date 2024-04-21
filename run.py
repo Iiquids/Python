@@ -52,11 +52,10 @@ async def postData():
                 letterDay = "nil"
 
 
-    return letterDay, term_data
+    return "[" + str(letterDay) + "," +  str(term_data) + "]"
 
 async def main():
     data = await postData()
-    json_object = json.dumps(data, indent = 4)
-    print(json_object)
+    print(data)
 
 asyncio.run(main())
