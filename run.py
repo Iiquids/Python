@@ -1,6 +1,7 @@
 import asyncio
 import aiohttp
 from datetime import datetime
+import json
 
 def getLocalDate():
     # Get current local date
@@ -55,6 +56,7 @@ async def postData():
 
 async def main():
     data = await postData()
-    print(data)
+    json_object = json.dumps(data, indent = 4)
+    print(json_object)
 
 asyncio.run(main())
