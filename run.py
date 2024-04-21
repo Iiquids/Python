@@ -11,15 +11,7 @@ async def postData():
     async with aiohttp.ClientSession() as session:
         # First POST request
         post_url = 'https://middletowncityschools.infinitecampus.org/campus/verify.jsp'
-        post_payload = {
-            'username': '1504573',
-            'password': 'B#102506',
-            'portalUrl': 'portal/students/mcsd.jsp?&rID=0.4447194889849019',
-            'appName': 'mcsd',
-            'url': 'nav-wrapper',
-            'lang': 'en',
-            'portalLoginPage': 'students'
-        }
+
         post_headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
