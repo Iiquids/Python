@@ -52,7 +52,7 @@ async def postData():
                 letterDay = "nil"
 
 
-    return "[" + str(letterDay) + "," +  str(term_data) + "]"
+    return "['" + str(letterDay) + "'," +  str(term_data) + "]"
 
 async def main():
     data = await postData()
