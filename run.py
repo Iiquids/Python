@@ -37,7 +37,7 @@ async def postData():
         if day_data[i]["date"] == getLocalDate():
             if day_data[i]["periodScheduleID"] == "562":
                 letterDay = "X"
-            elif day_data[i]["periodScheduleID"] == "567":
+            elif day_data[i]["periodScheduleID"] == "563":
                 letterDay = "Y"
             else:
                 letterDay = "nil"
